@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" integrity="sha512-t4GWSVZO1eC8BM339Xd7Uphw5s17a86tIZIj8qRxhnKub6WoyhnrxeCIMeAqBPgdZGlCcG2PrZjMc+Wr78+5Xg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="container">
+        <h2 class="text-center">ALL CUSTOMERS</h2>
+        <div class="row my-4">
+            <div class="col-lg-12">
+                <div class="table-responsive">
+                    <% if (orders != '') { %>
+                        <table class="table table-striped text-center">
+                            <thead>
+                                <tr class="table table-dark">
+                                    <th>ID</th>
+                                    <th>Name of the Product</th>
+                                    <th>Name</th>
+                                    <th>Number</th>
+                                    <th>Select</th>
+                                    <th>Quantity</th>
+                                    <th>Address</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                              <% orders.forEach((row,index) => { %>
+                               <tr>
+                                <td><%= row._id %></td>
+                                <td><%= row.nameProduct %></td>
+                                <td><%= row.userName  %></td>
+                                <td>
+                                    <%= row.unum %>
+                                </td>
+                                <td><%= row.select %></td>
+                                <td><%= row.quantity %></td>
+                                <td><%= row.userAddress %></td>
+                               </tr>
+                              <% }) %>
+                                
+                            </tbody>
+                        </table>
+                    <% }else{%>
+                        <h1 class="text-center text-secondary mt-5">No Orders Found in the Database</h1>
+                    <% } %>
+                </div>
+            </div>
+        </div>
+        <form action="" method="post">
+            <button class="contact">Go to Contacts</button>
+        </form>
+  
+        
+    </div>
+        
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js" integrity="sha512-VK2zcvntEufaimc+efOYi622VN5ZacdnufnmX7zIhCPmjhKnOi9ZDMtg1/ug5l183f19gG1/cBstPO4D8N/Img==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="../test.js"></script>
+</body>
+</html>
